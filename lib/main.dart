@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'features/auth/auth_routes.dart';
+import 'services/data/vocabulary_data.dart';
+import 'features/auth/presentations/auth_routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await VocabularyData.loadWords();
   runApp(const MyApp());
 }
 
@@ -11,10 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mi Aplicación Flutter',
+      title: 'Plataforma Lengua Inga',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF8B4513),
+          primary: const Color(0xFF8B4513),
+          secondary: const Color(0xFFD2691E),
+        ),
+        useMaterial3: true,
       ),
       initialRoute: AuthRoutes.splash,
       routes: AuthRoutes.routes,

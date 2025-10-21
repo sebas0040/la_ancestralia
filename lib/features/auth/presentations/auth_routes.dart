@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'presentations/splash_screen.dart';
-import 'presentations/welcome_screen.dart';
-import 'presentations/login_screen.dart';
+import 'pages/splash_screen.dart';
+import 'pages/welcome_screen.dart';
+import 'pages/login_screen.dart';
 
 class AuthRoutes {
   static const String splash = '/';
